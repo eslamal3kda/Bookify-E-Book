@@ -5,8 +5,8 @@ import { Link, NavLink } from "react-router-dom";
 export default function PublicNavbar() {
     return (
         <header className="bg-white w-full h-20 relative top-0 flex items-center justify-center">
-            <nav className="flex justify-between items-center  px-16  w-full fixed right-0 bg-white/90 h-20 ">
-                <Link to={"/"} className="flex items-center gap-1.5 text-2xl font-luckiestguy" >
+            <nav className="flex justify-between items-center  px-16  w-full fixed right-0 bg-white/70 h-20 z-20 backdrop-blur-lg ">
+                <Link to={"/"} className="flex items-center gap-1.5 text-2xl font-luckiestguy">
                     <div className="bg-blue-600 p-1 rounded-full w-8 h-8 flex justify-center items-center">
                         <FaBookOpen className="text-white text-xl" />
                     </div>
@@ -26,7 +26,9 @@ export default function PublicNavbar() {
                         <NavLink to={"membership"}>Membership</NavLink>
                     </li>
                 </ul>
-                <Link to={"login"} className="bg-blue-600 py-2 px-6 rounded-2xl text-white">Login</Link>
+                <button className="bg-blue-600 py-2 px-8 rounded-full text-white cursor-pointer">
+                    Login
+                </button>
             </nav>
         </header>
     );
