@@ -95,6 +95,7 @@ export default function LandingPage() {
                     <ReviewsCard />
                 </div>
             </section>
+            {/* Banner Section */}
             <section className="px-40 py-20">
                 <Banner />
             </section>
