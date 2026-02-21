@@ -15,10 +15,10 @@ export default function LandingPage() {
                 <div className="felx justify-center items-center bg-black/30 backdrop-blur-md w-fit py-2 px-4 rounded-2xl text-white  uppercase">
                     <div className="w-3 h-3 bg-green-500 rounded-full inline-block mr-2"></div> 1,284 readers live now{" "}
                 </div>
-                <h2 className="text-7xl capitalize w-[450px] text-center text-white ">
+                <h2 className="text-7xl capitalize w-112 text-center text-white ">
                     Where stories <span className="text-blue-500 italic">come alive</span>{" "}
                 </h2>
-                <p className="text-white w-[500px] text-center capitalize text-lg">
+                <p className="text-white w-125 text-center capitalize text-lg">
                     join the world's most vibrant digital reading community. Discuss, review, and discover your next favorite journey.
                 </p>
                 <div className="flex justify-center items-center gap-4">
@@ -97,7 +97,7 @@ export default function LandingPage() {
             </section>
             {/* Banner Section */}
             <section className="px-40 py-20">
-                <Banner />
+                <Banner landing />
             </section>
         </main>
     );
