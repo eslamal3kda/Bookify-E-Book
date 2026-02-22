@@ -1,6 +1,8 @@
 import React from "react";
+import { ImQuestion } from "react-icons/im";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
-export default function Banner({ landing, about }) {
+export default function Banner({ landing, about, membership }) {
     if (landing) {
         return (
             <div className="w-full p-10 h-70 bg-blue-500 rounded-4xl flex justify-between items-center gap-4">
@@ -24,6 +26,20 @@ export default function Banner({ landing, about }) {
                     <button className="py-4 px-8 rounded-xl cursor-pointer bg-white text-blue-500">Browse Collection</button>
                     <button className="py-4 px-8 rounded-xl cursor-pointer border">View Membership Plans</button>
                 </div>
+            </div>
+        );
+    }
+    if (membership) {
+        return (
+            <div className="w-full p-10 h-70 bg-blue-500 text-white rounded-4xl flex flex-col justify-center items-center gap-4 ">
+                <span className="text-5xl">
+                    <ImQuestion />
+                </span>
+                <h2 className="text-6xl capitalize">Still have questions?</h2>
+                <p className="font-sans">Our team is here to help you find the right path for your reading journey. We're available 24/7 via live chat.</p>
+                <button className="py-1 px-8 rounded-xl cursor-pointer bg-white text-blue-500 flex items-center gap-4 group">
+                    Chat with a Librarian <FaLongArrowAltRight className="group-hover:translate-x-1" />
+                </button>
             </div>
         );
     }
