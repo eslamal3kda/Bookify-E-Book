@@ -2,18 +2,14 @@ import { Form, Formik } from "formik";
 import React from "react";
 import { FaBookOpen } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import Logo from "../../components/Logo";
 
 export default function PublicFooter() {
     return (
         <footer className="px-40 py-20 ">
             <div className="flex  justify-between pb-8 mb-8 border-b border-gray-300">
                 <div className="flex flex-col gap-4 max-w-80">
-                    <Link to={"/"} className="flex items-center gap-1.5 text-2xl font-luckiestguy">
-                        <div className="bg-blue-600 p-1 rounded-full w-8 h-8 flex justify-center items-center">
-                            <FaBookOpen className="text-white text-xl" />
-                        </div>
-                        <h2>Bookify</h2>
-                    </Link>
+                    <Logo />
                     <p className="font-sans ">The premier destination for readers to connect, share, and grow. Founded by book lovers, for book lovers.</p>
                 </div>
                 <div className="">
