@@ -25,10 +25,10 @@ export default function App() {
                 { path: "about", element: <AboutUs /> },
                 { path: "contact", element: <ContactUs /> },
                 { path: "membership", element: <Membership /> },
-                { path: "login", element: <Login /> },
                 { path: "signup", element: <Signup /> },
             ],
         },
+        { path: "login", element: <Login /> },
         {
             element: <ProtectedRoute />,
             children: [
