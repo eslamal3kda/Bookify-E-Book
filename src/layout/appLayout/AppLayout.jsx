@@ -1,7 +1,14 @@
-import React from 'react'
+import React from "react";
+import AppNavbar from "./AppNavbar";
+import AppFooter from "./AppFooter";
+import { Outlet } from "react-router-dom";
 
 export default function AppLayout() {
-  return (
-    <div>AppLayout</div>
-  )
+    return (
+        <>
+            <AppNavbar />
+            <Outlet />
+            <AppFooter />
+        </>
+    );
 }

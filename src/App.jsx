@@ -30,10 +30,10 @@ export default function App() {
         },
         { path: "login", element: <Login /> },
         {
+            path: "/app",
             element: <ProtectedRoute />,
             children: [
                 {
-                    path: "/app",
                     element: <AppLayout />,
                     children: [
                         { index: true, element: <HomePage /> },
