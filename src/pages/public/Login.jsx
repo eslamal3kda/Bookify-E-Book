@@ -1,8 +1,9 @@
 import React from "react";
 import Logo from "../../components/Logo";
-import { Field, Formik } from "formik";
-import { Form } from "react-router-dom";
+import { Form, Formik } from "formik";
+import { Link } from "react-router-dom";
 import * as Yup from "yup";
+import WrapperInput from "../../components/WrapperInput";
 
 export default function Login() {
     const initialValues = {
@@ -11,11 +12,14 @@ export default function Login() {
         remember: false,
     };
     const validationSchema = Yup.object({
-        email: Yup.string(),
-        password: Yup.string(),
+        email: Yup.string().email("Invalid email format").required("Email is required"),
+
+        password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
+
+        remember: Yup.boolean(),
     });
-    const onSubmit = () => {
-        console.log(`Hello`);
+    const onSubmit = (values) => {
+        console.log(values);
     };
     return (
         <main className="bg-gray-800 min-h-screen flex justify-center items-center text-white ">
@@ -27,19 +31,31 @@ export default function Login() {
                 <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
                     {() => (
                         <Form className="border p-4 rounded-2xl w-full flex flex-col">
-                            <div className="flex flex-col gap-1 mb-4">
-                                <label htmlFor="email">Email Address</label>
-                                <Field id="email" name="email" className="border p-2 rounded-lg" placeholder="name@example.com"/>
-                            </div>
-                            <div className="flex flex-col gap-1 mb-4">
-                                <label htmlFor="password">Password</label>
-                                <Field id="password" name="password" className="border p-2 rounded-lg" placeholder="*******" type="password"/>
-                            </div>
-                            <div className="flex  items-center gap-2 mb-4">
-                                <Field type="checkbox" id="remember" name="remember" />
-                                <label htmlFor="remember">remember me for 30 days</label>
-                            </div>
-                            <button className="bg-blue-500 p-3 rounded-2xl cursor-pointer">Login</button>
+                            <WrapperInput elementClasses={"flex flex-col gap-1 mb-4"} inputClasses={"border p-2 rounded-lg"} label={"Email Address"} name={"email"} placeholder={"name@example.com"} />
+                            <WrapperInput
+                                elementClasses={"flex flex-col gap-1 mb-4"}
+                                inputClasses={"border p-2 rounded-lg"}
+                                label={"password"}
+                                name={"password"}
+                                placeholder={"*********"}
+                                type={"password"}
+                            />
+                            <WrapperInput
+                                elementClasses={"flex justify-end flex-row-reverse items-center gap-2 mb-4"}
+                                inputClasses={""}
+                                label={"remember me for 30 days"}
+                                name={"remember"}
+                                type={"checkbox"}
+                            />
+                            <button type="submit" className="bg-blue-500 p-3 rounded-2xl cursor-pointer mb-2">
+                                Login
+                            </button>
+                            <p>
+                                Don't have an account ?{" "}
+                                <Link className="text-blue-400" to={"/signup"}>
+                                    sign up
+                                </Link>{" "}
+                            </p>
                         </Form>
                     )}
                 </Formik>

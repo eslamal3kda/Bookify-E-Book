@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PublicLayout from "./layout/publicLayout/PublicLayout";
 import LandingPage from "./pages/public/LandingPage";
 import AboutUs from "./pages/public/AboutUs";
@@ -14,6 +14,7 @@ import Browse from "./pages/app/Browse";
 import Collection from "./pages/app/Collection";
 import Favorites from "./pages/app/Favorites";
 import Profile from "./pages/app/Profile";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
     const routing = createBrowserRouter([
@@ -25,10 +26,10 @@ export default function App() {
                 { path: "about", element: <AboutUs /> },
                 { path: "contact", element: <ContactUs /> },
                 { path: "membership", element: <Membership /> },
-                { path: "signup", element: <Signup /> },
             ],
         },
-        { path: "login", element: <Login /> },
+        { path: "/login", element: <Login /> },
+        { path: "/signup", element: <Signup /> },
         {
             path: "/app",
             element: <ProtectedRoute />,
@@ -45,6 +46,7 @@ export default function App() {
                 },
             ],
         },
+        { path: "*", element: <NotFound /> },
     ]);
     return <RouterProvider router={routing}></RouterProvider>;
 }

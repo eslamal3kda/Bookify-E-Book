@@ -1,7 +1,7 @@
-import { Field } from "formik";
+import { ErrorMessage, Field } from "formik";
 import React from "react";
 
-export default function WrapperInput({label,name, isTextArea, isSelect,selectOptions, inputClasses,elementClasses,placeholder }) {
+export default function WrapperInput({label,name, isTextArea, isSelect,selectOptions, inputClasses,elementClasses,placeholder,type,errorMessClasses }) {
     if (isSelect) {
         return (
             <div className={elementClasses}>
@@ -15,7 +15,8 @@ export default function WrapperInput({label,name, isTextArea, isSelect,selectOpt
     return (
         <div className={elementClasses}>
             <label htmlFor={name} className="capitalize">{label}</label>
-            {isTextArea ? <Field id={name} className={`${inputClasses} resize-none`} as="textarea"  name={name} placeholder={placeholder}/> : <Field id={name} className={inputClasses}  name={name} placeholder={placeholder}/>}
+            {isTextArea ? <Field id={name} className={`${inputClasses} resize-none`} as="textarea" name={name} placeholder={placeholder} /> : <Field id={name} className={inputClasses} name={name} placeholder={placeholder} type={type} />}
+            <ErrorMessage name={name} component={'p'} id={name} className={`text-red-400 text-sm font-sans ${errorMessClasses}`} />
         </div>
     );
 }
