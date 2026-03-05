@@ -2,7 +2,7 @@ import React from "react";
 
 export default function BookClubCard({ clubName, clubImage, clubTag, meetingTime }) {
     return (
-        <div className=" w-[calc((100% - 4rem) / 3)] rounded-xl overflow-hidden flex flex-col gap-2 hover:shadow-2xl transition duration-300 bg-white group">
+        <div className="rounded-xl overflow-hidden flex flex-col gap-2 hover:shadow-2xl transition duration-300 bg-white group">
             <div className="relative">
                 <img src={clubImage} alt="" />
                 <span className=" absolute bg-amber-600 py-1 px-2 top-2 left-2 rounded-full text-xs uppercase text-white">{clubTag}</span>

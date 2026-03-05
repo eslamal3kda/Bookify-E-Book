@@ -3,8 +3,8 @@ import { IoMdStarOutline } from 'react-icons/io'
 
 export default function ReviewsCard() {
   return (
-      <div className='w-88
-     h-72 bg-white rounded-2xl p-6'>
+      <div className='
+      bg-white rounded-2xl p-6'>
         <div className="flex gap-4 mb-4">
             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoZw811gnayih2_kLE4k_ahideIL7TG8m-h4MsONaTnOH9yB1z8F-_s6JRFod2_3i6BJPbTr3KuDdoEFBK42PxoKTeNzSreMwNKFMhLfnvaxYuhqMATfcrlPngZmOzwFw29mVxncz9KegKu54KPmRzxBCj64J8YVgwGpihXC1w6TddFmvuJ2fp5l0f59_wvi3Lvw-yVAI6eZHhSI9dN2sy4N6S8kse1kaeIjEX5Q0TsdgkPBxp99hV6M60bf1qDvg3r5S_qAk81iuq" alt="" className='w-18 h-24 rounded-xl'/>
             <div className="">
