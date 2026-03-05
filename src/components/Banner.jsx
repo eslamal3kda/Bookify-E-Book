@@ -31,12 +31,12 @@ export default function Banner({ landing, about, membership }) {
     }
     if (membership) {
         return (
-            <div className="w-full p-10 h-70 bg-blue-500 text-white rounded-4xl flex flex-col justify-center items-center gap-4 ">
+            <div className="w-full p-4 md:p-10 min-h-70 bg-blue-500 text-white rounded-4xl flex flex-col justify-center items-center gap-4 ">
                 <span className="text-5xl">
                     <ImQuestion />
                 </span>
-                <h2 className="text-6xl capitalize">Still have questions?</h2>
-                <p className="font-sans">Our team is here to help you find the right path for your reading journey. We're available 24/7 via live chat.</p>
+                <h2 className="text-5xl md:text-6xl capitalize text-center">Still have questions?</h2>
+                <p className="font-sans text-center">Our team is here to help you find the right path for your reading journey. We're available 24/7 via live chat.</p>
                 <button className="py-1 px-8 rounded-xl cursor-pointer bg-white text-blue-500 flex items-center gap-4 group">
                     Chat with a Librarian <FaLongArrowAltRight className="group-hover:translate-x-1" />
                 </button>

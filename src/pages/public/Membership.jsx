@@ -54,41 +54,41 @@ export default function Membership() {
     return (
         <main className="bg-gray-100">
             {/* Heading Section */}
-            <section className="py-20 px-40 flex flex-col justify-center items-center gap-4 ">
-                <h1 className="text-6xl">
+            <section className="py-20 px-6 md:px-40 flex flex-col justify-center items-center gap-4 ">
+                <h1 className="text-5xl md:text-6xl text-center">
                     Choose the Perfect Plan for Your <span className="text-blue-500">Reading Journey</span>
                 </h1>
-                <p className="text-black/70 text-lg w-xl text-center">
+                <p className="text-black/70 text-base md:text-lg md:w-xl text-center">
                     Unlock unlimited access to thousands of bestsellers, classics, and exclusive new releases with our flexible membership options.
                 </p>
             </section>
             {/* Plans Section */}
-            <section className="flex flex-col justify-center items-center  ">
+            <section className="flex flex-col justify-center items-center px-6 lg:px-40 ">
                 <div className="flex gap-8 items-center mb-15">
-                    <span className="text-black/60">Monthly</span>
+                    <span className="text-black/60 hidden sm:flex">Monthly</span>
                     <div className="flex gap-4 bg-gray-200 py-1 px-4 rounded-full">
                         <button className="py-1 px-2 rounded-full bg-blue-500 text-white cursor-pointer">Monthly</button>
                         <button className="p-1 rounded-full cursor-pointer ">Annual </button>
                     </div>
-                    <span className="relative after:content-['save_20%'] after:absolute after:bottom-0 after:-right-21 after:w-20 after:text-green-600 after:text-sm after:bg-green-200 after:text-center after:rounded-2xl text-black/60">
+                    <span className="relative after:content-['save_20%'] after:absolute after:bottom-0 after:-right-21 after:w-20 after:text-green-600 after:text-sm after:bg-green-200 after:text-center after:rounded-2xl text-black/60 hidden sm:flex">
                         Annual
                     </span>
                 </div>
-                <div className="flex gap-4 mb-10 justify-center">
+                <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(250px,1fr))] mb-10 justify-center w-full">
                     {membersipPlans.map((m) => (
                         <PricingCard key={m.id} planName={m.planName} price={m.price} description={m.description} buttonCaption={m.btnTitle} benefits={m.benefits} />
                     ))}
                 </div>
             </section>
             {/* FAQ Section */}
-            <section className="mx-40 my-20 flex flex-col items-center gap-8 ">
-                <h2 className="text-4xl">Frequently Asked Questions</h2>
+            <section className="mx-6 lg:mx-40 my-20 flex flex-col items-center gap-8 ">
+                <h2 className="text-4xl text-center">Frequently Asked Questions</h2>
                 <div className="bg-white mb-20 rounded-2xl">
                   {FQA.map((f)=><AccordionItem key={f.id} FQA={f.fqa} Answer={f.answer} />)}
                 </div>
             </section>
             {/* Banner Section */}
-            <section className="px-40 pb-20">
+            <section className="px-6 md:px-40 pb-20">
               <Banner membership />
             </section>
         </main>
