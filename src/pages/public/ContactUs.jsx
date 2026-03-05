@@ -14,10 +14,10 @@ export default function ContactUs() {
         message: "",
     };
     const onSubmit = (e) => {
-      console.log(e);
-    }
+        console.log(e);
+    };
     return (
-        <main className="bg-gray-100 px-40 py-20 flex flex-col xl:flex-row  gap-12">
+        <main className="bg-gray-100 px-6 md:px-40 py-20 flex flex-col xl:flex-row  gap-12">
             <section className="flex flex-col gap-6 flex-1">
                 <h1 className="text-6xl">
                     Get in touch with our <span className="text-blue-500">Librarians</span>
@@ -46,21 +46,23 @@ export default function ContactUs() {
             <section className="flex-1">
                 <Formik initialValues={initialValues} onSubmit={onSubmit}>
                     {() => (
-                        <Form className="bg-white h-full rounded-3xl p-14 flex flex-wrap gap-8  content-center">
-                            <WrapperInput
-                                elementClasses={"w-[calc((100%-1rem)/2)]"}
-                                inputClasses={"bg-gray-100 focus:outline-blue-500 p-4  rounded-xl w-full"}
-                                label={"Full Name"}
-                                placeholder={"John Doe"}
-                                name={"fullName"}
-                            />
-                            <WrapperInput
-                                elementClasses={"w-[calc((100%-3rem)/2)]"}
-                                inputClasses={"bg-gray-100 focus:outline-blue-500 p-4  rounded-xl w-full"}
-                                label={"Email Address"}
-                                placeholder={"john@example.com"}
-                                name={"email"}
-                            />
+                        <Form className="bg-white h-full rounded-xl md:rounded-3xl p-6 md:p-14 flex flex-wrap gap-8 content-center">
+                            <div className="flex gap-4 flex-col sm:flex-row w-full">
+                                <WrapperInput
+                                    elementClasses={" flex-1 "}
+                                    inputClasses={"bg-gray-100 focus:outline-blue-500 p-4  rounded-xl w-full"}
+                                    label={"Full Name"}
+                                    placeholder={"John Doe"}
+                                    name={"fullName"}
+                                />
+                                <WrapperInput
+                                    elementClasses={"flex-1"}
+                                    inputClasses={"bg-gray-100 focus:outline-blue-500 p-4  rounded-xl w-full"}
+                                    label={"Email Address"}
+                                    placeholder={"john@example.com"}
+                                    name={"email"}
+                                />
+                            </div>
                             <WrapperInput
                                 elementClasses={"w-full"}
                                 inputClasses={"bg-gray-100 focus:outline-blue-500 p-4 w-full rounded-xl w-full"}
