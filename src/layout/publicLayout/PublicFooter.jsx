@@ -15,10 +15,10 @@ export default function PublicFooter() {
                     <p className="font-sans ">The premier destination for readers to connect, share, and grow. Founded by book lovers, for book lovers.</p>
                 </div>
                 <div className="w-full sm:w-fit">
-                    <h4 className="mb-6 text-xl flex justify-between items-center " onClick={() => setOpenCommunity(!openCommunity)}>
+                    <h4 className="mb-6 text-xl flex justify-between items-center cursor-pointer sm:cursor-auto " onClick={() => setOpenCommunity(!openCommunity)}>
                         Community <span className="sm:hidden">{openCommunity ? <IoIosArrowUp /> : <IoIosArrowDown />}</span>
                     </h4>
-                    <ul className={`font-sans flex flex-col gap-4 overflow-hidden transition-all duration-300 ${openCommunity ? "h-fit" : "h-0"}`}>
+                    <ul className={`font-sans flex flex-col gap-4 overflow-hidden transition-all duration-300 ${openCommunity ? "h-fit" : "h-0"} sm:h-fit`}>
                         <li className="cursor-pointer hover:text-blue-500 transition">Book Clubs</li>
                         <li className="cursor-pointer hover:text-blue-500 transition">Discussion Forums</li>
                         <li className="cursor-pointer hover:text-blue-500 transition">Live Events</li>
@@ -26,21 +26,21 @@ export default function PublicFooter() {
                     </ul>
                 </div>
                 <div className="w-full sm:w-fit ">
-                    <h4 className="mb-6 text-xl flex justify-between items-center" onClick={() => setOpenResources(!openResources)}>
+                    <h4 className="mb-6 text-xl flex justify-between items-center cursor-pointer sm:cursor-auto" onClick={() => setOpenResources(!openResources)}>
                         Resources <span className="sm:hidden">{openResources ? <IoIosArrowUp /> : <IoIosArrowDown />}</span>
                     </h4>
-                    <ul className={`font-sans flex flex-col gap-4 overflow-hidden transition-all duration-300 ${openResources ? "h-fit" : "h-0"}`}>
+                    <ul className={`font-sans flex flex-col gap-4 overflow-hidden transition-all duration-300 ${openResources ? "h-fit" : "h-0"} sm:h-fit `}>
                         <li className="cursor-pointer hover:text-blue-500 transition">Reading Lists</li>
                         <li className="cursor-pointer hover:text-blue-500 transition">Author Interviews</li>
                         <li className="cursor-pointer hover:text-blue-500 transition">Writing Tips</li>
                         <li className="cursor-pointer hover:text-blue-500 transition">Help Center</li>
                     </ul>
                 </div>
-                <div className="max-w-70">
-                    <h4 className="mb-6 text-xl flex justify-between items-center" onClick={() => setOpenNewsletter(!openNewsletter)}>
+                <div className="w-full sm:max-w-70">
+                    <h4 className="mb-6 text-xl flex justify-between items-center cursor-pointer sm:cursor-auto" onClick={() => setOpenNewsletter(!openNewsletter)}>
                         Newsletter <span className="sm:hidden">{openNewsletter ? <IoIosArrowUp /> : <IoIosArrowDown />}</span>
                     </h4>
-                    <div className={`overflow-hidden transition-all duration-300 ${openNewsletter ? "h-fit" : "h-0"}`}>
+                    <div className={`overflow-hidden transition-all duration-300 ${openNewsletter ? "h-fit" : "h-0"} sm:h-fit`}>
                         <p className="mb-6 font-sans">Get the best reviews and club updates in your inbox.</p>
                         <Formik>
                             <Form className="flex flex-col">

@@ -20,36 +20,36 @@ export default function AboutUs() {
     return (
         <main className="bg-gray-100">
             {/* Hero Section */}
-            <section className="py-20 px-40">
-                <div className="bg-[url('/images/library-1.png')] min-h-screen bg-cover bg-center bg-black/50 bg-blend-darken text-white flex flex-col gap-6 justify-center items-center rounded-2xl">
+            <section className="xl:py-20 xl:px-40">
+                <div className="bg-[url('/images/library-1.png')] h-screen bg-cover bg-center bg-black/50 bg-blend-darken text-white flex flex-col gap-6 justify-center items-center xl:rounded-2xl">
                     <span className="text-blue-500 uppercase">Our Legacy</span>
-                    <h1 className="text-7xl w-200 text-center">Preserving Knowledge, Inspiring Futures.</h1>
-                    <p className="w-220 text-center text-xl font-sans">
+                    <h1 className=" text-4xl xl:text-7xl w-100 md:w-200 text-center">Preserving Knowledge, Inspiring Futures.</h1>
+                    <p className="lg:w-220 text-center text-base lg:text-xl font-sans">
                         From physical archives to a global community of readers, we are building the bridge between the wisdom of the past and the technology of the future.
                     </p>
                     <button className="bg-blue-500 py-4 px-8 rounded-2xl cursor-pointer">Join Our Mission</button>
                 </div>
             </section>
             {/* Panel Section */}
-            <section className="px-40 pb-40 flex gap-8">
+            <section className="px-6 py-6 lg:px-40 pb-40 grid gap-8 grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
                 <AboutUsPanel title={"total books"} about={"10k+"} statistic={"+15%"} details={"Growth from last quarter"} />
                 <AboutUsPanel title={"active readers"} about={"5k+"} statistic={"+22%"} details={"New members this month"} />
                 <AboutUsPanel title={"global access"} about={"24/7"} details={"Available across 140 countries"} />
             </section>
             {/* Our Mission Section */}
-            <section className="pb-20 px-40 flex flex-col gap-8 items-center justify-center">
-                <h2 className="text-5xl ">Our Mission</h2>
-                <p className="w-200 text-center text-xl text-black/80">
+            <section className="pb-20 px-6 lg:px-40 flex flex-col gap-8 items-center justify-center">
+                <h2 className="text-4xl text-center lg:text-5xl ">Our Mission</h2>
+                <p className="lg:w-200 text-center text-base  lg:text-xl text-black/80">
                     We believe that access to high-quality literature and educational resources is a fundamental right. Our mission is to democratize knowledge by providing a seamless, borderless
                     digital platform that connects authors and readers worldwide.
                 </p>
             </section>
             {/* Our Story Section */}
-            <section className="py-20 px-40 flex gap-8 justify-center">
-                <div className="overflow-hidden rounded-3xl group w-100">
+            <section className="py-20 px-6 md:px-40 flex flex-col lg:flex-row gap-8 justify-center">
+                <div className="overflow-hidden rounded-3xl group w-full sm:w-100 ">
                     <img src="/images/pic1.png" alt="" className="group-hover:scale-110 transition duration-300 w-full h-full" />
                 </div>
-                <div className=" flex flex-col gap-8 w-100 ">
+                <div className=" flex flex-col gap-8 md:w-100 ">
                     <h3 className="text-3xl">Our Story</h3>
                     <p className=" text-black/70">
                         Founded in 2018, Digital Library began as a small project to digitize out-of-print historical manuscripts. What started as a labor of love by three librarians and two software
@@ -72,17 +72,17 @@ export default function AboutUs() {
                 </div>
             </section>
             {/* Curators Section */}
-            <section className="py-20 px-40 flex flex-col justify-center bg-neutral-950 text-white gap-4 items-center">
-                <h2 className="text-5xl capitalize">Meet the Curators</h2>
-                <p>The passionate experts dedicated to bringing literature to your screens.</p>
-                <div className=" flex gap-4">
+            <section className="py-20 px-6 lg:px-40 flex flex-col justify-center bg-neutral-950 text-white gap-4 items-center text-center">
+                <h2 className="text-3xl md:text-5xl capitalize">Meet the Curators</h2>
+                <p className="text-sm md:text-base">The passionate experts dedicated to bringing literature to your screens.</p>
+                <div className=" grid gap-4 grid-cols-[repeat(auto-fit,minmax(220px,1fr))] w-full">
                     {curators.map((c) => (
                         <CuratorsCard key={c.id} name={c.name} jobTitle={c.jobTitle} image={c.pofilePic} info={c.info} />
                     ))}
                 </div>
             </section>
             {/* Banner Section */}
-            <section className="px-40 py-20">
+            <section className="px-6 lg:px-40 py-20">
                 <Banner about />
             </section>
         </main>

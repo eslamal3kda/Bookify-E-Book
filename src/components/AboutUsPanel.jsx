@@ -10,7 +10,7 @@ export default function AboutUsPanel({ title, details, statistic, about }) {
         "global access": <FaGlobeAfrica />,
     };
     return (
-        <div className="p-10 w-[calc((100%-2rem)/3)] h-65 bg-white rounded-2xl flex flex-col gap-2 justify-between">
+        <div className="p-10  h-65 bg-white rounded-2xl flex flex-col gap-2 justify-between">
             <div className="text-blue-500 text-4xl">{icons[title]}</div>
             <h3 className="text-xl capitalize text-black/60">{title}</h3>
             <p className="text-6xl">

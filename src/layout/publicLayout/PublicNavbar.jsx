@@ -10,7 +10,7 @@ export default function PublicNavbar() {
 
     return (
         <header className="bg-white w-full h-20 relative top-0 flex items-center justify-center">
-            <nav className="flex justify-between items-center  px-16  w-full fixed right-0 bg-white/70 h-20 z-20 backdrop-blur-lg ">
+            <nav className="flex justify-between items-center px-4 md:px-16  w-full fixed right-0 bg-white/70 h-20 z-20 backdrop-blur-lg ">
                 <Logo />
                 <ul className="hidden md:flex gap-4">
                     <li>

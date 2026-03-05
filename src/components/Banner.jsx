@@ -19,12 +19,12 @@ export default function Banner({ landing, about, membership }) {
     }
     if (about) {
         return (
-            <div className="w-full p-10 h-70 bg-blue-500 text-white rounded-4xl flex flex-col justify-center items-center gap-4">
-                <h2 className="text-6xl">Start Your Digital Journey Today</h2>
+            <div className="w-full p-6 md:p-10 min-h-70 bg-blue-500 text-white rounded-2xl md:rounded-4xl flex flex-col justify-center items-center gap-4">
+                <h2 className="text-4xl md:text-6xl">Start Your Digital Journey Today</h2>
                 <p className="font-sans">Join thousands of readers around the world and gain instant access to our expansive collection.</p>
-                <div className="flex gap-6">
-                    <button className="py-4 px-8 rounded-xl cursor-pointer bg-white text-blue-500">Browse Collection</button>
-                    <button className="py-4 px-8 rounded-xl cursor-pointer border">View Membership Plans</button>
+                <div className="flex flex-col md:flex-row gap-3 md:gap-6">
+                    <button className="py-2 md:py-4 px-4 md:px-8 rounded-xl cursor-pointer bg-white text-blue-500">Browse Collection</button>
+                    <button className="py-2 md:py-4 px-4 md:px-8 rounded-xl cursor-pointer border">View Membership Plans</button>
                 </div>
             </div>
         );
