@@ -15,6 +15,7 @@ import Collection from "./pages/app/Collection";
 import Favorites from "./pages/app/Favorites";
 import Profile from "./pages/app/Profile";
 import NotFound from "./pages/NotFound";
+import { Toaster } from "react-hot-toast";
 
 export default function App() {
     const routing = createBrowserRouter([
@@ -48,5 +49,10 @@ export default function App() {
         },
         { path: "*", element: <NotFound /> },
     ]);
-    return <RouterProvider router={routing}></RouterProvider>;
+    return (
+        <>
+            <Toaster position="bottom-center" reverseOrder={false} />
+            <RouterProvider router={routing}></RouterProvider>;
+        </>
+    );
 }

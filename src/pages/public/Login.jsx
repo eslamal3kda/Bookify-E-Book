@@ -1,25 +1,37 @@
 import React from "react";
 import Logo from "../../components/Logo";
 import { Form, Formik } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import WrapperInput from "../../components/WrapperInput";
+import { useAuthStore } from "../../store/authStore";
+import { toast, Toaster } from "react-hot-toast";
 
 export default function Login() {
+    const navigate = useNavigate();
+    const loginUser = useAuthStore((state) => state.login);
     const initialValues = {
-        email: "",
+        login: "",
         password: "",
         remember: false,
     };
     const validationSchema = Yup.object({
-        email: Yup.string().email("Invalid email format").required("Email is required"),
+        login: Yup.string().required("username : admin"),
 
-        password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
+        password: Yup.string().required("Password : Admin123"),
 
         remember: Yup.boolean(),
     });
     const onSubmit = (values) => {
-        console.log(values);
+        const { login, password } = values;
+
+        if (login === "admin" && password === "Admin123") {
+            toast.success("Successfully toasted!");
+            loginUser(login);
+            navigate("/app");
+        } else {
+            toast.error("Login Failed");
+        }
     };
     return (
         <main className="bg-gray-800 min-h-screen flex justify-center items-center text-white ">
@@ -31,7 +43,13 @@ export default function Login() {
                 <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
                     {() => (
                         <Form className="border p-4 rounded-2xl w-full flex flex-col">
-                            <WrapperInput elementClasses={"flex flex-col gap-1 mb-4"} inputClasses={"border p-2 rounded-lg"} label={"Email Address"} name={"email"} placeholder={"name@example.com"} />
+                            <WrapperInput
+                                elementClasses={"flex flex-col gap-1 mb-4"}
+                                inputClasses={"border p-2 rounded-lg"}
+                                label={"Email or Username"}
+                                name={"login"}
+                                placeholder={"Enter email or username"}
+                            />
                             <WrapperInput
                                 elementClasses={"flex flex-col gap-1 mb-4"}
                                 inputClasses={"border p-2 rounded-lg"}
@@ -59,6 +77,16 @@ export default function Login() {
                         </Form>
                     )}
                 </Formik>
+                <div className=" font-sans text-center">
+                    <h4 className="text-amber-300 text-xl font-bold mb-1 capitalize">Alert</h4>
+                    <p className="text-amber-300 text-sm mb-1">This is a temporary mock authentication used for learning purposes until OAuth integration is implemented.</p>
+                    <p className="text-white/70">
+                        Username: <span className="font-bold">admin</span>
+                    </p>
+                    <p className="text-white/70">
+                        Password: <span className="font-bold">Admin123</span>
+                    </p>
+                </div>
             </section>
         </main>
     );
