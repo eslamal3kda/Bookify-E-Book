@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function HomePage() {
   return (
-    <div className=''>HomePage</div>
+    <main className='h-screen dark:bg-gray-900'>
+      
+    </main>
   )
 }

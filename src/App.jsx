@@ -52,7 +52,7 @@ export default function App() {
     return (
         <>
             <Toaster position="bottom-center" reverseOrder={false} />
-            <RouterProvider router={routing}></RouterProvider>;
+            <RouterProvider router={routing}></RouterProvider>
         </>
     );
 }

@@ -33,6 +33,9 @@
     body {
         font-family: var(--font-acme);
     }
+    .dark body {
+        @apply text-white bg-gray-900
+    }
 
     a.active {
         @apply text-blue-500
