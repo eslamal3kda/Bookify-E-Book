@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { MdAutoAwesome, MdOutlineMenuBook, MdOutlineRocketLaunch, MdPerson, MdTravelExplore } from "react-icons/md";
 import { MdStar, MdStarBorder } from "react-icons/md";
+import { TbDoorEnter, TbDoorExit } from "react-icons/tb";
 
 export default function HomePage() {
+  const [isOpen,setIsOpen] = useState(false)
     const filters = {
         genres: [
             { id: 1, label: "Fiction", icon: <MdOutlineMenuBook />, isSelected: true },
@@ -36,9 +38,13 @@ export default function HomePage() {
     };
 
     return (
-        <main className="h-screen container mx-auto">
-            <aside className="font-sans dark:text-gray-300 p-4 flex flex-col gap-6 w-76 border-r border-r-gray-300 dark:border-r-gray-700">
+        <main className="h-screen container mx-auto overflow-hidden">
+            <aside className={`font-sans dark:text-gray-300 p-4 pr-14 flex flex-col gap-6 w-76 border-r border-r-gray-300 dark:border-r-gray-700 relative transition duration-300  ${isOpen?'translate-x-0':'-translate-x-64'}`}>
                 <div className="flex flex-col gap-3">
+                    <div className="text-2xl absolute -right-4 top-4 bg-white dark:bg-gray-900 p-1 rounded border border-gray-300 dark:border-gray-700 cursor-pointer " onClick={()=>setIsOpen(!isOpen)}>
+                        {isOpen?<TbDoorEnter />:<TbDoorExit />}
+                    </div>
+
                     <h4 className="uppercase text-sm text-[12px] font-bold ">genres</h4>
                     <ul>
                         {genres.map((g) => (
@@ -56,10 +62,7 @@ export default function HomePage() {
 
                 <ul>
                     {ratings.map((r) => (
-                        <li
-                            key={r.id}
-                            onClick={() => handleRatingSelect(r.id)}
-                            className={`flex items-center gap-2 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-700 rounded-lg transition p-2`}>
+                        <li key={r.id} onClick={() => handleRatingSelect(r.id)} className={`flex items-center gap-2 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-700 rounded-lg transition p-2`}>
                             <input type="checkbox" checked={r.isSelected} readOnly />
                             {[...Array(5)].map((_, index) => (index < r.value ? <MdStar key={index} className="text-yellow-400" /> : <MdStarBorder key={index} className="text-yellow-400" />))}
                         </li>
