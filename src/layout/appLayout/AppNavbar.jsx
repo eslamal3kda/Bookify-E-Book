@@ -37,7 +37,7 @@ export default function AppNavbar() {
             </nav>
             <FiMenu className="text-2xl cursor-pointer sm:hidden" onClick={() => setIsOpen(!isOpen)} />
             {isOpen && (
-                <nav className=" absolute flex flex-col gap-20 items-center border dark:border-gray-700 border-gray-300 top-14 right-4 p-4 dark:bg-gray-800 w-40 bg-gray-200 sm:hidden">
+                <nav className="absolute z-10 flex flex-col gap-20 items-center border dark:border-gray-700 border-gray-300 top-14 right-4 p-4 dark:bg-gray-800 w-40 bg-gray-200 sm:hidden">
                     <ul className="flex flex-col items-center gap-2 relative">
                         <IoClose className="absolute -top-2 -left-2 text-xl cursor-pointer" onClick={() => setIsOpen(false)} />
                         <li>

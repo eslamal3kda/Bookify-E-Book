@@ -101,11 +101,11 @@ export default function HomePage() {
                     </div>
                 </section>
                 <section className="py-20 px-4">
-                    <div className="flex gap-4 mb-6">
+                    <div className="flex gap-4 mb-6 flex-wrap">
                         {authors.map((a) => (
                             <span
                                 key={a.id}
-                                className={`py-2 px-6 border border-gray-300 dark:border-gray-700 rounded-3xl cursor-pointer bg-gray-200 transition ${a.isSelected ? "dark:bg-blue-500 hover:dark:bg-blue-400" : "dark:bg-gray-800 hover:dark:bg-gray-700"} mb-4`}>
+                                className={`py-2 px-4 sm:px-6 border border-gray-300 dark:border-gray-700 rounded-3xl cursor-pointer bg-gray-200 transition ${a.isSelected ? "dark:bg-blue-500 hover:dark:bg-blue-400" : "dark:bg-gray-800 hover:dark:bg-gray-700"} mb-4`}>
                                 {a.authorName}
                             </span>
                         ))}
