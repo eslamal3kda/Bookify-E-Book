@@ -5,8 +5,8 @@ export default function Favorites() {
     return (
         <main className="container mx-auto">
             <section className="px-6 py-15">
-                <h1 className="text-6xl capitalize mb-6">your favorites</h1>
-                <div className="flex justify-between items-center mb-6">
+                <h1 className="text-6xl capitalize mb-6 lg:px-20">your favorites</h1>
+                <div className="flex justify-between items-center mb-6 lg:px-20">
                     <p className="text-lg text-gray-600 dark:text-gray-400">6 books saved to your collection</p>
                     <button className="py-2 px-6 bg-blue-500 rounded-xl cursor-pointer text-white">Browse More Books</button>
                 </div>
