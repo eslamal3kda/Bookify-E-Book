@@ -16,6 +16,7 @@ import Favorites from "./pages/app/Favorites";
 import Profile from "./pages/app/Profile";
 import NotFound from "./pages/NotFound";
 import { Toaster } from "react-hot-toast";
+import BookDetails from "./pages/app/BookDetails";
 
 export default function App() {
     const routing = createBrowserRouter([
@@ -43,6 +44,7 @@ export default function App() {
                         { path: "collection", element: <Collection /> },
                         { path: "favorites", element: <Favorites /> },
                         { path: "profile", element: <Profile /> },
+                        { path: "books/:id", element: <BookDetails /> },
                     ],
                 },
             ],
