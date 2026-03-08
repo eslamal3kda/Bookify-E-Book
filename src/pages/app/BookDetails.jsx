@@ -1,5 +1,6 @@
 import React from "react";
 import { MdStar } from "react-icons/md";
+import { FaHeart } from "react-icons/fa";
 
 export default function BookDetails() {
     return (
@@ -36,6 +37,7 @@ export default function BookDetails() {
                             America in the 1920s.
                         </p>
                     </div>
+                    <button className="px-4 py-2 bg-gray-700 w-fit rounded capitalize cursor-pointer flex items-center gap-4"><FaHeart className="text-blue-500" /> add to favorites</button>
                 </div>
             </div>
         </main>

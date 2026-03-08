@@ -18,39 +18,40 @@ import NotFound from "./pages/NotFound";
 import { Toaster } from "react-hot-toast";
 import BookDetails from "./pages/app/BookDetails";
 
+const routing = createBrowserRouter([
+    {
+        path: "/",
+        element: <PublicLayout />,
+        children: [
+            { index: true, element: <LandingPage /> },
+            { path: "about", element: <AboutUs /> },
+            { path: "contact", element: <ContactUs /> },
+            { path: "membership", element: <Membership /> },
+        ],
+    },
+    { path: "/login", element: <Login /> },
+    { path: "/signup", element: <Signup /> },
+    {
+        path: "/app",
+        element: <ProtectedRoute />,
+        children: [
+            {
+                element: <AppLayout />,
+                children: [
+                    { index: true, element: <HomePage /> },
+                    { path: "browse", element: <Browse /> },
+                    { path: "collection", element: <Collection /> },
+                    { path: "favorites", element: <Favorites /> },
+                    { path: "profile", element: <Profile /> },
+                    { path: "browse/:id", element: <BookDetails /> },
+                    { path: "*", element: <NotFound /> },
+                ],
+            },
+        ],
+    },
+    { path: "*", element: <NotFound /> },
+]);
 export default function App() {
-    const routing = createBrowserRouter([
-        {
-            path: "/",
-            element: <PublicLayout />,
-            children: [
-                { index: true, element: <LandingPage /> },
-                { path: "about", element: <AboutUs /> },
-                { path: "contact", element: <ContactUs /> },
-                { path: "membership", element: <Membership /> },
-            ],
-        },
-        { path: "/login", element: <Login /> },
-        { path: "/signup", element: <Signup /> },
-        {
-            path: "/app",
-            element: <ProtectedRoute />,
-            children: [
-                {
-                    element: <AppLayout />,
-                    children: [
-                        { index: true, element: <HomePage /> },
-                        { path: "browse", element: <Browse /> },
-                        { path: "collection", element: <Collection /> },
-                        { path: "favorites", element: <Favorites /> },
-                        { path: "profile", element: <Profile /> },
-                        { path: "books/:id", element: <BookDetails /> },
-                    ],
-                },
-            ],
-        },
-        { path: "*", element: <NotFound /> },
-    ]);
     return (
         <>
             <Toaster position="bottom-center" reverseOrder={false} />

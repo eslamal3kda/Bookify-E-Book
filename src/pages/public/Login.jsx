@@ -26,7 +26,7 @@ export default function Login() {
         const { login, password } = values;
 
         if (login === "admin" && password === "Admin123") {
-            toast.success("Successfully toasted!");
+            toast.success("Login Success");
             loginUser(login);
             navigate("/app");
         } else {
