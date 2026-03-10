@@ -1,6 +1,5 @@
-import { Formik } from "formik";
 import React, { useState } from "react";
-import WrapperInput from "../../components/WrapperInput";
+import { IoIosArrowDown } from "react-icons/io";
 import CollectionCard from "../../components/CollectionCard";
 
 const collectionTags = [
@@ -66,7 +65,7 @@ export default function Collection() {
                 <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4">
                     {collections.map((c)=><CollectionCard key={c.id} title={c.name} description={c.description} count={c.count} imgURL={c.imgURL} tag={c.tag} />)}
                 </div>
-                <button className="capitalize  py-2 px-6 border rounded cursor-pointer w-fit">show more collections</button>
+                <button className="capitalize  py-2 px-6 border rounded cursor-pointer w-fit self-center border-gray-300 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-800 transition flex items-center gap-3">show more collections <IoIosArrowDown /></button>
             </section>
         </main>
     );
