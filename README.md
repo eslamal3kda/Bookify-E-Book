@@ -22,7 +22,7 @@ https://bookify-e-library.netlify.app/
 - Tailwind
 - Formik 
 - Yup 
-- React Icon
+- React Icons
 - React-Hot-Toast
 - Zustand
 - Tanstack/React-Query (Not Yet)
